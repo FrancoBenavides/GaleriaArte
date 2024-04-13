@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galería de Arte</title>
+  <style>
+    /* Estilos CSS */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+
+    header {
+      background-color: #333333;
+      color: #000000;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      display: inline;
+      margin-right: 20px;
+    }
+
+    nav ul li a {
+      color: #000000;
+      text-decoration: none;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-gap: 20px;
+    }
+
+    .gallery img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease-in-out;
+      cursor: pointer;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    /* Ocultar todas las secciones excepto la de inicio por defecto */
+    .gallery-section, .events-section, .contact-section {
+      display: none;
+    }
+    .home-section {
+      display: block;
+    }
+
+    /* Estilos para el banner */
+    .banner {
+      width: 100%;
+      background-color: #34b401;
+      color: #554492;
+      padding: 20px 0;
+      text-align: center;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .banner span {
+      display: inline-block;
+      animation: marquee 20s linear infinite;
+    }
+
+    /* Animación de desplazamiento */
+    @keyframes marquee {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Galería de Arte</h1>
+  <nav>
+    <ul>
+      <li><a href="#" onclick="showSection('home')">Inicio</a></li>
+      <li><a href="#" onclick="showSection('gallery')">Galería</a></li>
+      <li><a href="#" onclick="showSection('events')">Eventos</a></li>
+      <li><a href="#" onclick="showSection('contact')">Contacto</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="home-section">
+    <!-- Banner con animación de desplazamiento -->
+    <div class="banner">
+      <span>Galería de Arte - Bienvenido a nuestro mundo creativo - Galería de Arte - Bienvenido a nuestro mundo creativo</span>
+    </div>
+    <h2>Bienvenido a nuestra galería de arte</h2>
+    <p>Esta es la página de inicio.</p>
+  </section>
+  <section class="gallery-section">
+    <h2>Galería</h2>
+    <div class="gallery">
+      <!-- Aquí se cargarán las imágenes de la galería -->
+      <img src="imagen1.jpeg" alt="Descripción de la imagen">
+      <img src="imagen2.jpeg" alt="Descripción de la imagen">
+      <img src="imagen3.jpeg" alt="Descripción de la imagen">
+      <!-- Agrega más imágenes según sea necesario -->
+    </div>
+  </section>
+  <section class="events-section">
+    <h2>Próximos eventos</h2>
+    <p>Información sobre los próximos eventos de la galería de arte.</p>
+  </section>
+  <section class="contact-section">
+    <h2>Contáctanos</h2>
+    <p>Para más información, contáctanos en:</p>
+    <ul>
+      <li>Email: contacto@galeriadearte.com</li>
+      <li>Teléfono: +123456789</li>
+    </ul>
+    <p>Síguenos en nuestras redes sociales:</p>
+    <ul>
+      <li><a href="https://www.facebook.com/galeriadearte" target="_blank">Facebook</a></li>
+      <li><a href="https://twitter.com/galeriadearte" target="_blank">Twitter</a></li>
+      <li><a href="https://www.instagram.com/galeriadearte" target="_blank">Instagram</a></li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2024 Galería de Arte</p>
+</footer>
+
+<script>
+  // Función para mostrar la sección correspondiente y ocultar las demás
+  function showSection(sectionName) {
+    const sections = document.querySelectorAll('main section');
+    sections.forEach(section => {
+      if (section.classList.contains(sectionName + '-section')) {
+        section.style.display = 'block';
+      } else {
+        section.style.display = 'none';
+      }
+    });
+  }
+</script>
+
+</body>
+</html>
